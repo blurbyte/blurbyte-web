@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'avant-garde-mid';
+  src: url('../fonts/avant-garde-mid.otf');
+}
+
+@font-face {
+  font-family: 'avant-garde-book';
+  src: url('../fonts/avant-garde-book.otf');
+}
+
+html {
+	font-size: 10px;
+	font-family: sans-serif;
+}
+
+h1 {
+  font-family: 'avant-garde-mid', sans-serif;
+  font-size: 8rem;
+  color: #54534e;
+  letter-spacing: -0.6rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: 'avant-garde-book', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.2rem;
+  font-size: 2.4rem;
+  color: #7b7872;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #54534e;
+}
+
+h4 {
+  font-family: 'avant-garde-mid', sans-serif;
+  letter-spacing: -0.2rem;
+  font-size: 3.2rem;
+  color: #54534e;
+  font-weight: normal;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2rem;
+   color: #7b7872;
+   line-height: 1.4;
+}
+
+a {
+  font-family: 'avant-garde-book', sans-serif;
+  letter-spacing: -0.2rem;
+}
+
+table {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #7b7872;
+  text-align: left;
+}
+
+li, dt, dd {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #7b7872;
+}
+
+dt {
+  font-weight: bold;
+}
+
+figcaption, aside, .project-content .small-text p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.6rem;
+  color: #7b7872;
+  line-height: 1.4;
+}
+
+code {
+  padding: 0 3px;
+  background: rgba(55,55,55,0.1);
+  font-family: 'Consolas', Courier New, Courier, monospace;
+}
+
+pre[class*="language-"], code[class*="language-"] {
+  font-family: 'Consolas', Courier New, Courier, monospace;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #7b7872;
+  text-align: left;
+}
+
+.full-article aside, .about-content aside {
+  text-align: center;
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.project-content aside, .project-content .small-text {
+  text-align: right;
+}
+
+.full-article h4 {
+  color: #7b7872;
+}
+
+.motto, .back-top p, time, .new-label {
+  font-family: 'avant-garde-book', sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: -0.2rem;
+  color: #908e89;
+}
+
+.new-label {
+  color: #e2dcd0;
+}
+
+.project-link {
+  font-family: 'avant-garde-book', sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: -0.2rem;
+  color: #ff4326;
+}
+
+.articles-filter-item {
+  font-family: 'avant-garde-book', sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: -0.2rem;
+  color: #7b7872;
+}
+
+.blog-article footer p {
+  font-family: 'avant-garde-book', sans-serif;
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+  color: #7b7872;
+}
+
+.blog-article footer p time {
+  text-transform: none;
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+  color: #7b7872;
+}
+
+.full-article p a {
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ letter-spacing: 0;
+ color: #7b7872;
+}
+
+.token.keyword {
+  color: #6e59a4;
+}
+
+.token.string {
+  color: #70a459;
+}
+
+/*ABOUT GRAPHS*/
+.graph-label {
+  font-family: 'avant-garde-book', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.1rem;
+  color: #7b7872;
+}
+
+/*FULL SCREEN GALLERY*/
+.gallery-img-counter {
+  font-family: 'avant-garde-book', sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: -0.2rem;
+  color: #908e89;
+}

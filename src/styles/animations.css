@@ -1,0 +1,126 @@
+/*GRAPHS ANIMATION*/
+.graph .graph-path, .graph .graph-bgr, .graph .graph-items-count  {
+  transition: 1s transform cubic-bezier(0.175, 0.885, 0.32, 1.6);
+  transform-origin: 50% 50%;
+}
+
+.graph:hover .graph-path {
+  transform: scale(1.04);
+}
+
+.graph:hover .graph-bgr, .graph:hover .graph-items-count {
+  transform: scale(0.98);
+}
+
+/*SMALL CLOCK ANIMATION */
+.small-clock .clock-handles {
+  transform-origin: 12px 12px;
+}
+
+.small-clock:hover .clock-handles {
+  transform: rotate(360deg);
+  transition: 0.5s transform linear;
+}
+
+/*FILTER ARTICLES*/
+
+.filter-articles-enter {
+  opacity: 0;
+}
+
+.filter-articles-enter.filter-articles-enter-active {
+  opacity: 1;
+  transition: 0.7s opacity;
+}
+
+.filter-articles-leave {
+  opacity: 1;
+}
+
+.filter-articles-leave.filter-articles-leave-active {
+  opacity: 0;
+  transition: 0.5s opacity;
+}
+
+/*FULL SCREEN FADE*/
+
+.full-screen-fade-enter {
+  opacity: 0;
+}
+
+.full-screen-fade-enter.full-screen-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.full-screen-fade-leave {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.full-screen-fade-leave.full-screen-fade-leave-active {
+  opacity: 0;
+}
+
+/*GALLERY IMAGE FADE CTR*/
+.gallery-image-fade-leave {
+  opacity: 1;
+}
+
+.gallery-image-fade-leave.gallery-image-fade-leave-active {
+  opacity: 0;
+  transition: opacity .5s linear;
+}
+
+.gallery-image-fade-enter {
+  opacity: 0;
+}
+
+.gallery-image-fade-enter.gallery-image-fade-enter-active {
+  opacity: 1;
+  transition: opacity .5s linear 1s;
+}
+
+.gallery-image-fade-height {
+ 	min-height: 100%;
+}
+
+.gallery-image-fade-appear {
+  opacity: 0;
+}
+
+.gallery-image-fade-appear.gallery-image-fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.8s linear 0.6s;
+}
+
+/*GALLERY BAR FADE DOWN*/
+.bar-fade-down-appear {
+  opacity: 0;
+  transform: translateY(-6rem);
+}
+
+.bar-fade-down-appear.bar-fade-down-appear-active {
+  opacity: 1;
+  transition: all 0.4s ease-out 0.4s;
+  transform: translateY(0);
+}
+
+/*GALLERY CURRENT INDEX FADE CTR*/
+.gallery-current-index-fade-enter {
+  opacity: 0;
+}
+
+.gallery-current-index-fade-enter.gallery-current-index-fade-active {
+  opacity: 1;
+  transition: opacity 0.6s linear;
+}
+
+.gallery-current-index-fade-leave {
+  opacity: 0;
+  transition: opacity 0.4s linear;
+}
+
+.gallery-current-index-fade-leave.gallery-current-index-fade-active {
+  opacity: 0;
+}
