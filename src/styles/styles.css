@@ -36,7 +36,7 @@ body {
 
 .bgr-wrapper {
   background: url("../images/top-bgr.jpg") top center no-repeat, url("../images/bot-bgr.jpg") bottom center no-repeat;
-  padding-bottom: 42rem;
+  padding-bottom: 24rem;
   padding-top: 6rem;
   min-height: 100vh;
 }
@@ -840,4 +840,32 @@ ul, ol, dl {
   left: 0;
   width: 10rem;
   height: 4rem;
+}
+
+/*FOOTER MIAN*/
+.main-footer {
+  background: #54534e;
+}
+
+.main-footer .wrapper {
+  height: 12.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-footer a {
+  margin-right: 2rem;
+}
+
+.main-footer .email {
+  display: block;
+}
+
+.main-footer a .icon .main-shape {
+  transition: 0.75s fill;
+}
+
+.main-footer a:hover .icon .main-shape {
+  fill: #f5eee1;
 }

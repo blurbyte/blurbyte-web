@@ -183,3 +183,19 @@ pre[class*="language-"], code[class*="language-"] {
   letter-spacing: -0.2rem;
   color: #908e89;
 }
+
+/*FOOTER MAIN*/
+.main-footer .contact-info {
+  color: #f5eee1;
+}
+
+.main-footer .contact-info {
+  text-align: right;
+}
+
+.main-footer .email {
+  font-family: 'avant-garde-mid', sans-serif;
+  font-size: 2.4rem;
+  color: #ff4326;
+  line-height: 1.2;
+}

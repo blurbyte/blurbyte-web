@@ -5,6 +5,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 //common
 import FullScreenGallery from './common/FullScreenGallery';
 import FullScreenLoader from './common/FullScreenLoader';
+import Footer from './common/Footer';
 
 class App extends React.Component {
   constructor(props, context) {
@@ -20,6 +21,7 @@ class App extends React.Component {
           {galleryVisibility && <FullScreenGallery />}
         </CSSTransitionGroup>
         {this.props.children}
+        <Footer />
       </div>
     );
   }
