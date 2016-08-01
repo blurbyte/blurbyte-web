@@ -36,9 +36,11 @@ const defaultState = {
 const store = configureStore(defaultState);
 const history = syncHistoryWithStore(browserHistory, store);
 
+//Changing scroll position to top after each route update
+
 render(
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <Router history={history} routes={routes} onUpdate={() => document.querySelector('.app-scroll-wrapper').scrollTop = 0} />
   </Provider>,
   document.getElementById('app')
 );

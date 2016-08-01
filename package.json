@@ -1,5 +1,5 @@
 {
-  "name": "learn-react",
+  "name": "blurbyte-web",
   "version": "1.0.0",
   "description": "Blurbyte - Code & Design website",
   "scripts": {
@@ -68,7 +68,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/elotenaar/learn-react"
+    "url": "https://github.com/blurbyte/blurbyte-web"
   },
   "engines": {
     "node": "5.9.1",
