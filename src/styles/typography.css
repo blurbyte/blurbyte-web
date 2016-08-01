@@ -191,11 +191,12 @@ pre[class*="language-"], code[class*="language-"] {
 
 .main-footer .contact-info {
   text-align: right;
+  font-size: 1.6rem;
+  line-height: 1.0;
 }
 
 .main-footer .email {
   font-family: 'avant-garde-mid', sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: #ff4326;
-  line-height: 1.2;
 }

@@ -848,14 +848,14 @@ ul, ol, dl {
 }
 
 .main-footer .wrapper {
-  height: 12.8rem;
+  height: 9rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .main-footer a {
-  margin-right: 2rem;
+  margin-right: 1.4rem;
 }
 
 .main-footer .email {
