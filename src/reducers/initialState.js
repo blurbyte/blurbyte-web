@@ -7,5 +7,6 @@ export default {
   articles: [],
   articlesTopics: [],
   about: {},
+  scroll: {},
   fetchRequestsInProgress: 0
 };

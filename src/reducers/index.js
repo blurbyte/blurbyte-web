@@ -9,9 +9,10 @@ import articlesTopics from './articlesTopicsReducer';
 import about from './aboutReducer';
 import fetchRequestsInProgress from './fetchStatusReducer';
 import galleryImagesLoaded from './galleryImagesLoadedReducer';
+import scroll from './scrollReducer';
 
 const rootReducer = combineReducers({
-  foldImages, imageGallery, currentImage, galleryImagesLoaded, projects, articles, articlesTopics, about, fetchRequestsInProgress, routing: routerReducer
+  foldImages, imageGallery, currentImage, galleryImagesLoaded, projects, articles, articlesTopics, about, scroll, fetchRequestsInProgress, routing: routerReducer
 });
 
 export default rootReducer;

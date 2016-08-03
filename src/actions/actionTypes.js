@@ -30,3 +30,6 @@ export const LOAD_ARTICLES_SUCCESS = 'LOAD_ARTICLES_SUCCESS';
 
 //about
 export const LOAD_ABOUT_SUCCESS = 'LOAD_ABOUT_SUCCESS';
+
+//scroll
+export const UPDATE_SCROLL = 'UPDATE_SCROLL';

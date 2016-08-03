@@ -1,18 +1,42 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 //import components
-import {TwitterIcon, GithubIcon} from './Icons';
+import FooterContent from './FooterContent';
 
-const Footer = () => (
-  <footer className="main-footer">
-    <div className="wrapper">
-      <div className="social-links">
-        <a href="https://twitter.com/" target="_blank"><TwitterIcon width={40} height={40} /></a>
-        <a href="https://github.com/blurbyte" target="_blank"><GithubIcon width={40} height={40} /></a>
-      </div>
-      <p className="contact-info">contact<span className="email">info@blurbyte.com</span></p>
-      </div>
-  </footer>
+//getWindowHeight
+import {getWindowHeight} from '../../utilities/getElementHeight';
+
+class Footer extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  getVisibility() {
+    const {scroll} = this.props;
+    //checking if element is 100px above bottom of the page
+    if(scroll && (scroll.scrollHeight - (getWindowHeight() + scroll.scrollTop) < 90)) {
+      return true;
+    }
+    return false;
+  }
+
+  render() {
+    return (
+      <CSSTransitionGroup component="div" className="animated-footer" transitionName="footer-fade-up" transitionEnterTimeout={1000} transitionLeave={false}>
+        {this.getVisibility() && <FooterContent />}
+      </CSSTransitionGroup>
+    );
+  }
+}
+
+Footer.propTypes = {
+  scroll: PropTypes.object
+};
+
+const mapStateToProps = (state) => (
+  { scroll: state.scroll }
 );
 
-export default Footer;
+export default connect(mapStateToProps)(Footer);

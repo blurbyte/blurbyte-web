@@ -124,3 +124,34 @@
 .gallery-current-index-fade-leave.gallery-current-index-fade-active {
   opacity: 0;
 }
+
+/*SIDE LOGO AND BACK TO TOP*/
+.simple-fade-enter {
+  opacity: 0;
+}
+
+.simple-fade-enter.simple-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.simple-fade-leave {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.simple-fade-leave.simple-fade-leave-active {
+  opacity: 0;
+}
+
+/*FOOTER FADE UP*/
+.footer-fade-up-enter {
+  opacity: 0;
+  transform: translateY(9rem);
+}
+
+.footer-fade-up-enter.footer-fade-up-enter-active {
+  opacity: 1;
+  transition: all 0.4s ease-out 0.4s;
+  transform: translateY(0);
+}

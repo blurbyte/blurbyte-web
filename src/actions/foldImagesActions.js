@@ -1,3 +1,4 @@
+/*eslint-disable no-console */
 import * as types from './actionTypes';
 import * as paths from '../utilities/apiPaths';
 
