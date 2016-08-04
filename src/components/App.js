@@ -7,6 +7,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 import FullScreenGallery from './common/FullScreenGallery';
 import FullScreenLoader from './common/FullScreenLoader';
 import Footer from './common/Footer';
+import WelcomeScreen from './common/WelcomeScreen';
 
 //actions
 import * as scrollActions from '../actions/scrollActions';
@@ -17,11 +18,20 @@ import {getElementHeight} from '../utilities/getElementHeight';
 class App extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      welcomeScreenVisibility: true
+    };
+
     this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
     this.scrollWrapper.addEventListener('scroll', this.handleScroll);
+
+    //making sure Welcome Screen fires only once
+    setTimeout(() => {
+      this.setState({ welcomeScreenVisibility: false });
+    }, 2000);
   }
 
   componentWillUnmount() {
@@ -29,16 +39,37 @@ class App extends React.Component {
   }
 
   handleScroll(event) {
+    //handles scrollTop in Redux Store
     let scrollTop = event.target.scrollTop;
     let scrollHeight = getElementHeight(event.target);
     this.props.actions.updateScroll({ scrollTop, scrollHeight });
   }
 
+  showWelcomeScreen() {
+    const {loading} = this.props;
+    const {welcomeScreenVisibility} = this.state;
+
+    if(welcomeScreenVisibility) {
+      return true;
+    }
+    //checking if items are loading but Welcome Screen shouldn't be displayed (after first display)
+    else if(loading && !welcomeScreenVisibility) {
+      return false;
+    }
+    else {
+      return false;
+    }
+  }
+
   render() {
-    const {galleryVisibility} = this.props;
+    const {galleryVisibility, loading} = this.props;
+
     return (
       <div className="app-scroll-wrapper" ref={node => this.scrollWrapper = node}>
-        {this.props.loading && <FullScreenLoader />}
+        <CSSTransitionGroup transitionName="welcome-screen-fade" transitionEnter={false} transitionLeaveTimeout={8000}>
+          {this.showWelcomeScreen() && <WelcomeScreen />}
+        </CSSTransitionGroup>
+        {loading && <FullScreenLoader />}
         <CSSTransitionGroup transitionName="full-screen-fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
           {galleryVisibility && <FullScreenGallery />}
         </CSSTransitionGroup>
