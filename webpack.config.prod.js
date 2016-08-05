@@ -35,7 +35,8 @@ export default {
     loaders: [
       { test: /\.js$/, include: path.join(__dirname, 'src'), loader: 'babel' },
       { test: /(\.css)$/, loader: ExtractTextPlugin.extract('css?sourceMap') },
-      {test: /\.(jpe?g|png|gif)$/i, loaders: ['file']}
+      {test: /\.(jpe?g|png|gif)$/i, loaders: ['file']},
+      {test: /\.[ot]tf$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream'}
     ]
   }
 };

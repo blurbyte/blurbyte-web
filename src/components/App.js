@@ -27,11 +27,14 @@ class App extends React.Component {
 
   componentDidMount() {
     this.scrollWrapper.addEventListener('scroll', this.handleScroll);
+  }
 
-    //making sure Welcome Screen fires only once
-    setTimeout(() => {
+  componentWillReceiveProps(nextProps) {
+    //if initial content has loaded set WelcomeScreen flag to false
+    //this way WelcomeScreen shows only once
+    if (!nextProps.loading) {
       this.setState({ welcomeScreenVisibility: false });
-    }, 2000);
+    }
   }
 
   componentWillUnmount() {
@@ -45,29 +48,14 @@ class App extends React.Component {
     this.props.actions.updateScroll({ scrollTop, scrollHeight });
   }
 
-  showWelcomeScreen() {
-    const {loading} = this.props;
-    const {welcomeScreenVisibility} = this.state;
-
-    if(welcomeScreenVisibility) {
-      return true;
-    }
-    //checking if items are loading but Welcome Screen shouldn't be displayed (after first display)
-    else if(loading && !welcomeScreenVisibility) {
-      return false;
-    }
-    else {
-      return false;
-    }
-  }
-
   render() {
     const {galleryVisibility, loading} = this.props;
+    const {welcomeScreenVisibility} = this.state;
 
     return (
       <div className="app-scroll-wrapper" ref={node => this.scrollWrapper = node}>
         <CSSTransitionGroup transitionName="welcome-screen-fade" transitionEnter={false} transitionLeaveTimeout={8000}>
-          {this.showWelcomeScreen() && <WelcomeScreen />}
+          {welcomeScreenVisibility && <WelcomeScreen />}
         </CSSTransitionGroup>
         {loading && <FullScreenLoader />}
         <CSSTransitionGroup transitionName="full-screen-fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
