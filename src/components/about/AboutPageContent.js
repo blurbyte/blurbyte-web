@@ -20,7 +20,7 @@ const AboutPageContent = ({foldImage, about, path}) => {
     <div className="bgr-wrapper">
       <div className="wrapper">
         <Header />
-        <SideLogo />
+        <SideLogo hasHeader={true} />
         {foldImage && <FoldImage url={paths.IMAGES_PATH + foldImage.file} alt={foldImage.alt} description={foldImage.description} />}
         <article className="main-content about-content col2" role="main">
           <h1 className="wide9">About</h1>

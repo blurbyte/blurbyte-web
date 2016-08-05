@@ -16,7 +16,7 @@ import * as paths from '../../utilities/cdnPaths';
 const ArticlePageContent = ({article, path}) => (
   <div className="bgr-wrapper no-header">
     <div className="wrapper">
-      <SideLogo />
+      <SideLogo hasHeader={false} />
       <article className="main-content full-article col2 wide9">
         <header>
           <div className="full-article-info"><Time date={article.pubdate} /></div>

@@ -11,19 +11,11 @@ import {getWindowHeight} from '../../utilities/getElementHeight';
 class SideLogo extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      hasHeader: true
-    };
-  }
-
-  componentDidMount() {
-    //set false if page doesn't have header
-    this.setState({ hasHeader: !document.querySelector('.no-header') });
   }
 
   getVisibility() {
     const {scroll} = this.props;
-    const {hasHeader} = this.state;
+    const {hasHeader} = this.props;
     //page doesn't have header
     if(!hasHeader) {
       if(scroll.scrollTop === 0) {
@@ -53,7 +45,8 @@ class SideLogo extends React.Component {
 }
 
 SideLogo.propTypes = {
-  scroll: PropTypes.object
+  scroll: PropTypes.object,
+  hasHeader: PropTypes.bool
 };
 
 const mapStateToProps = (state) => (

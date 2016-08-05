@@ -9,7 +9,7 @@ const ProjectPageContent = ({project, path}) => {
   return (
     <div className="bgr-wrapper no-header">
       <div className="wrapper">
-        <SideLogo />
+        <SideLogo hasHeader={false} />
         <article className="main-content project-content col2" role="main">
           <header className="wide9">
             <h1>{project.title}</h1>

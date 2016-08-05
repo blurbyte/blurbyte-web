@@ -13,7 +13,7 @@ const PortfolioPageContent = ({foldImage, projects, path}) => (
   <div className="bgr-wrapper">
     <div className="wrapper">
       <Header />
-      <SideLogo />
+      <SideLogo hasHeader={true} />
       {foldImage && <FoldImage url={path + foldImage.file} alt={foldImage.alt} description={foldImage.description} />}
       {projects && <PortfolioProjectsList projects={projects} />}
       <BackTop />

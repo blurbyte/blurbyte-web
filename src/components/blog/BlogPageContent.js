@@ -18,7 +18,7 @@ const BlogPageContent = ({foldImage, articles}) => {
     <div className="bgr-wrapper">
       <div className="wrapper">
         <Header />
-        <SideLogo />
+        <SideLogo hasHeader={true} />
         {foldImage && <FoldImage url={paths.ARTICLES_PATH + foldImage.file} alt={foldImage.alt} description={foldImage.description} />}
         <NewArticle article={newestArticle} />
         <FilterableArticlesList articles={olderArticles} />
