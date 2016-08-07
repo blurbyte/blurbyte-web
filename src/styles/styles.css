@@ -471,6 +471,10 @@ article, section {
 }
 
 .articles-filter-item.selected a {
+  cursor: default;
+}
+
+.articles-filter-item.selected a {
   background: #ff4326;
 }
 
@@ -482,6 +486,11 @@ article, section {
 .blog-article {
   margin-bottom: 3rem;
 }
+
+.blog-article:last-child {
+  margin-bottom: 0;
+}
+
 .blog-article h4 {
   margin: 0;
 }

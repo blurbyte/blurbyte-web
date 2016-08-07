@@ -15,6 +15,9 @@ import find from 'lodash/find';
 class FilterableArticlesList extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      listWrapperHeight: 0
+    };
 
     this.onUpdateTopics = this.onUpdateTopics.bind(this);
   }
@@ -22,12 +25,15 @@ class FilterableArticlesList extends React.Component {
   onUpdateTopics(e, topic) {
     e.preventDefault();
     this.props.actions.selectFilterTopic(topic);
+    //set wrapper height once with the initial value, when it contains list of all articles
+    this.setState({ listWrapperHeight: this.state.listWrapperHeight > 0 ? this.state.listWrapperHeight : this.listWrapper.offsetHeight });
   }
 
   render() {
     let {topic} = find(this.props.articlesTopics, 'selected');
+    //set fixed height for articles wrapper to prevent content shifting
     return (
-      <div>
+      <div className="filterable-articles-list" ref={node => this.listWrapper = node} style={{ height: this.state.listWrapperHeight > 0 ? this.state.listWrapperHeight + 'px' : '' }}>
         <ArticlesFilter topics={this.props.articlesTopics} onUpdateTopics={this.onUpdateTopics} />
         <ArticlesList articles={this.props.articles} topic={topic} />
       </div>
