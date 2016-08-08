@@ -40,7 +40,9 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 render(
   <Provider store={store}>
-    <Router history={history} routes={routes} onUpdate={() => document.querySelector('.app-scroll-wrapper').scrollTop = 0} />
+    <Router history={history} routes={routes} onUpdate={() => {
+      document.querySelector('.app-scroll-wrapper').scrollTop = 0;
+    }} />
   </Provider>,
   document.getElementById('app')
 );

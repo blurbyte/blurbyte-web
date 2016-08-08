@@ -8,6 +8,9 @@ import * as imageGalleryActions from '../../actions/imageGalleryActions';
 //lodash
 import reduce from 'lodash/reduce';
 
+//animation breakpoints values
+import * as breakpoints from '../../utilities/animationBreakpoints';
+
 class Image extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -17,7 +20,13 @@ class Image extends React.Component {
   }
 
   showGallery(e, url) {
-    this.props.actions.showImageGallery(url);
+    let windowWidth = window.innerWidth;
+    if (windowWidth > breakpoints.SHOW_GALLERY_BREAKPOINT) {
+      this.props.actions.showImageGallery(url);
+    }
+    else {
+      return;
+    }
   }
 
   onImageLoad(url) {
@@ -26,7 +35,7 @@ class Image extends React.Component {
     const {imageGallery} = this.props;
     const numImagesLoaded = reduce(imageGallery, (result, image) => (image.loaded ? result + 1 : result), 1);
     //if all images are loaded dispatch action
-    if(imageGallery.length === numImagesLoaded) {
+    if (imageGallery.length === numImagesLoaded) {
       this.props.actions.allImagesLoaded();
     }
   }

@@ -11,6 +11,9 @@ import {getWindowHeight} from '../../utilities/getElementHeight';
 //scrollTo utility function
 import {scrollTo} from '../../utilities/scrollTo';
 
+//animation breakpoints values
+import * as breakpoints from '../../utilities/animationBreakpoints';
+
 class BackTop extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -21,7 +24,7 @@ class BackTop extends React.Component {
   getVisibility() {
     const {scroll} = this.props;
     //checking if element is 100px above bottom of the page
-    if(scroll && (scroll.scrollHeight - (getWindowHeight() + scroll.scrollTop) < 100)) {
+    if (scroll && (scroll.scrollHeight - (getWindowHeight() + scroll.scrollTop) < breakpoints.SHOW_FOOTER_BREAKPOPINT)) {
       return true;
     }
     return false;
@@ -43,7 +46,7 @@ class BackTop extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <CSSTransitionGroup transitionName="simple-fade" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
         {this.getVisibility() && <BackTopLink onBackTopClick={this.onBackTopClick} />}
       </CSSTransitionGroup>

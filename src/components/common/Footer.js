@@ -8,6 +8,9 @@ import FooterContent from './FooterContent';
 //getWindowHeight
 import {getWindowHeight} from '../../utilities/getElementHeight';
 
+//animation breakpoints values
+import * as breakpoints from '../../utilities/animationBreakpoints';
+
 class Footer extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -16,7 +19,7 @@ class Footer extends React.Component {
   getVisibility() {
     const {scroll} = this.props;
     //checking if element is 100px above bottom of the page
-    if(scroll && (scroll.scrollHeight - (getWindowHeight() + scroll.scrollTop) < 90)) {
+    if (scroll && (scroll.scrollHeight - (getWindowHeight() + scroll.scrollTop) < breakpoints.SHOW_FOOTER_BREAKPOPINT)) {
       return true;
     }
     return false;
