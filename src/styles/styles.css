@@ -957,20 +957,20 @@ ul, ol, dl {
   .bgr-wrapper {
     padding-top: 0;
     padding-bottom: 15rem;
-    background-position: center -16rem, center bottom;
+    background-position: center -10.4rem, center bottom;
   }
 
   .no-header {
-    background-position: center -90rem, center bottom;
+    background-position: center -86.4rem, center bottom;
   }
 
   .wrapper {
     width: 100%;
-    padding-top: 12rem;
+    padding-top: 18rem;
   }
 
   .no-header .wrapper {
-    padding-top: 9rem;
+    padding-top: 12.6rem;
   }
 
   .side-logo, .back-top {
@@ -1046,12 +1046,17 @@ ul, ol, dl {
     background: #f0f0e9;
     margin: 0;
     padding: 0 4rem;
-    height: 9rem;
+    height: 12rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 6px 6px rgba(0,0,0,0.1);
     border-bottom: 2px solid #908e89;
+    transition: height 0.4s ease;
+  }
+
+  .sticky-header.contracted {
+    height: 9rem;
   }
 
   .sticky-header .main-nav-logo {
@@ -1131,5 +1136,15 @@ ul, ol, dl {
   .main-footer-wrapper {
     padding: 0 4rem;
     width: 100%;
+  }
+}
+
+@media all and (max-width: 770px) {
+  .bgr-wrapper {
+    background-position: center -29.4rem, center bottom;
+  }
+
+  .no-header {
+    background-position: center -86.4rem, center bottom;
   }
 }

@@ -4,8 +4,11 @@ import {Link, IndexLink} from 'react-router';
 //import components
 import {BlurbyteLogo} from './Icons';
 
+//animation breakpoints values
+import * as breakpoints from '../../utilities/animationBreakpoints';
+
 const StickyHeaderContent = ({positionTop = 0}) => (
-  <header className="sticky-header" role="banner" style={{top: positionTop}}>
+  <header className={`sticky-header${positionTop > breakpoints.CONTRACT_HEADER_BREAKPOINT ? ' contracted' : ''}`} role="banner" style={{ top: positionTop }}>
     <div className="main-nav-logo"><Link to="/"><BlurbyteLogo width={240} height={50} /></Link></div>
     <nav className="main-nav">
       <ul>
