@@ -14,7 +14,6 @@ import * as articlesFilterActions from '../../actions/articlesFilterActions';
 //lodash
 import sortBy from 'lodash/sortBy';
 import reverse from 'lodash/reverse';
-import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
@@ -67,7 +66,7 @@ class BlogPage extends React.Component {
   fillArticlesTopicsList(articles) {
     //filling articles topics list
     let articlesTopics = [{ topic: 'All', selected: true }];
-    map(articles, article => {
+    articles.map(article => {
       articlesTopics.push({ topic: article.topic, selected: false});
     });
 

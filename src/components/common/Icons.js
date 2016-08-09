@@ -109,4 +109,22 @@ TwitterIcon.propTypes = {
   fill: PropTypes.string
 };
 
-export {BlurbyteLogo, SlimArrow, BbcLogo, EaLogo, SegaLogo, TechnipLogo, SmallClock, CloseMark, GithubIcon, TwitterIcon};
+const HamburgerIcon = ({width = 50, height = 50, fill = "#ff4326"}) => (
+  <svg className="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 50 50">
+    <circle className="main-shape" fill={fill} cx="25" cy="25" r="25"/>
+    <g className="bars">
+      <rect className="top-bar"  x="15" y="15" fill="#f5eee1" width="20" height="4"/>
+      <rect className="mid-bar" x="15" y="23" fill="#f5eee1" width="20" height="4"/>
+      <rect className="bot-bar" x="15" y="31" fill="#f5eee1" width="20" height="4"/>
+    </g>
+  </svg>
+);
+
+HamburgerIcon.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  fill: PropTypes.string,
+  expanded: PropTypes.bool
+};
+
+export {BlurbyteLogo, SlimArrow, BbcLogo, EaLogo, SegaLogo, TechnipLogo, SmallClock, CloseMark, GithubIcon, TwitterIcon, HamburgerIcon};

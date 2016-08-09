@@ -29,7 +29,7 @@ export const emptyImageGallery = () => (
 );
 
 //delaying next image to prevent click spam
-export const showNextImageWithTimeout = (nextImage, timeout = 600) => {
+export const showNextImageWithTimeout = (nextImage, timeout = 400) => {
   return (dispatch) => {
     setTimeout(() => {
       dispatch(showNextImage(nextImage));
