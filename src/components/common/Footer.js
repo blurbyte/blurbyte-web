@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 //import components
 import FooterContent from './FooterContent';
@@ -27,9 +26,7 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <CSSTransitionGroup component="div" className="animated-footer" transitionName="footer-fade-up" transitionEnterTimeout={1000} transitionLeave={false}>
-        {this.getVisibility() && <FooterContent />}
-      </CSSTransitionGroup>
+      <FooterContent expanded={this.getVisibility()} />
     );
   }
 }

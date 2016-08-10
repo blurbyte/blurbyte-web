@@ -1,10 +1,9 @@
-import React, {PropTypes} from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
 
 //import components
 import StickyHeaderContent from './StickyHeaderContent';
 
-class SideLogo extends React.Component {
+class StickyHeader extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -12,6 +11,7 @@ class SideLogo extends React.Component {
     };
 
     this.onHamburgerClick = this.onHamburgerClick.bind(this);
+    this.onLinkClick = this.onLinkClick.bind(this);
   }
 
   onHamburgerClick(event) {
@@ -20,20 +20,15 @@ class SideLogo extends React.Component {
     this.setState({ menuExpanded: !this.state.menuExpanded });
   }
 
+  onLinkClick() {
+    this.setState({ menuExpanded: false });
+  }
+
   render() {
-    const {scroll} = this.props;
     return (
-      <StickyHeaderContent positionTop={scroll.scrollTop} onHamburgerClick={this.onHamburgerClick} expanded={this.state.menuExpanded}/>
+      <StickyHeaderContent onHamburgerClick={this.onHamburgerClick} onLinkClick={this.onLinkClick} expanded={this.state.menuExpanded}/>
     );
   }
 }
 
-SideLogo.propTypes = {
-  scroll: PropTypes.object
-};
-
-const mapStateToProps = (state) => (
-  { scroll: state.scroll }
-);
-
-export default connect(mapStateToProps)(SideLogo);
+export default StickyHeader;

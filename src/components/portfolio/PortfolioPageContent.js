@@ -5,7 +5,6 @@ import Header from '../common/Header';
 import SideLogo from '../common/SideLogo';
 import FoldImage from '../common/FoldImage';
 import BackTop from '../common/BackTop';
-import StickyHeader from '../common/StickyHeader';
 
 //portfolio components
 import PortfolioProjectsList from './PortfolioProjectsList';
@@ -14,7 +13,6 @@ const PortfolioPageContent = ({foldImage, projects, path}) => (
   <div className="bgr-wrapper">
     <div className="wrapper">
       <Header />
-      <StickyHeader />
       <SideLogo hasHeader={true} />
       {foldImage && <FoldImage url={path + foldImage.file} alt={foldImage.alt} description={foldImage.description} />}
       {projects && <PortfolioProjectsList projects={projects} />}

@@ -6,7 +6,6 @@ import BackTop from '../common/BackTop';
 import PageContent from '../common/PageContent';
 import Image from '../common/Image';
 import Time from '../common/Time';
-import StickyHeader from '../common/StickyHeader';
 
 //icons
 import {SmallClock} from '../common/Icons';
@@ -17,7 +16,6 @@ import * as paths from '../../utilities/cdnPaths';
 const ArticlePageContent = ({article, path}) => (
   <div className="bgr-wrapper no-header">
     <div className="wrapper">
-      <StickyHeader />
       <SideLogo hasHeader={false} />
       <article className="main-content full-article col2 wide9">
         <header>

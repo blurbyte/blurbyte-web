@@ -5,7 +5,6 @@ import Header from '../common/Header.js';
 import SideLogo from '../common/SideLogo';
 import FoldImage from '../common/FoldImage';
 import BackTop from '../common/BackTop';
-import StickyHeader from '../common/StickyHeader';
 
 //articles components
 import NewArticle from './NewArticle';
@@ -20,7 +19,6 @@ const BlogPageContent = ({foldImage, articles}) => {
     <div className="bgr-wrapper">
       <div className="wrapper">
         <Header />
-        <StickyHeader />
         <SideLogo hasHeader={true} />
         {foldImage && <FoldImage url={paths.ARTICLES_PATH + foldImage.file} alt={foldImage.alt} description={foldImage.description} />}
         <NewArticle article={newestArticle} />

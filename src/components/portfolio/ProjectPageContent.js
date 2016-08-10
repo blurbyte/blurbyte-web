@@ -4,13 +4,11 @@ import React, {PropTypes} from 'react';
 import SideLogo from '../common/SideLogo';
 import BackTop from '../common/BackTop';
 import PageContent from '../common/PageContent';
-import StickyHeader from '../common/StickyHeader';
 
 const ProjectPageContent = ({project, path}) => {
   return (
     <div className="bgr-wrapper no-header">
       <div className="wrapper">
-        <StickyHeader />
         <SideLogo hasHeader={false} />
         <article className="main-content project-content col2" role="main">
           <header className="wide9">

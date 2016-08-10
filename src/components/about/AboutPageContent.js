@@ -6,7 +6,6 @@ import PageContent from '../common/PageContent';
 import SideLogo from '../common/SideLogo';
 import BackTop from '../common/BackTop';
 import FoldImage from '../common/FoldImage';
-import StickyHeader from '../common/StickyHeader';
 
 //icons
 import {BbcLogo, EaLogo, SegaLogo, TechnipLogo} from '../common/Icons';
@@ -21,7 +20,6 @@ const AboutPageContent = ({foldImage, about, path}) => {
     <div className="bgr-wrapper">
       <div className="wrapper">
         <Header />
-        <StickyHeader />
         <SideLogo hasHeader={true} />
         {foldImage && <FoldImage url={paths.IMAGES_PATH + foldImage.file} alt={foldImage.alt} description={foldImage.description} />}
         <article className="main-content about-content col2" role="main">

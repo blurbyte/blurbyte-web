@@ -227,6 +227,34 @@
   }
 }
 
+@keyframes slide-loading-bar-short {
+  0% {
+    transform: translateX(-100vw);
+  }
+  15% {
+    transform: translateX(-30vw);
+  }
+  18% {
+    transform: translateX(-30vw);
+  }
+  30% {
+    transform: translateX(0);
+  }
+  40% {
+    height: 0.4rem;
+  }
+  50% {
+    height: 5rem;
+  }
+  60% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200vw);
+    height: 5rem;
+  }
+}
+
 @keyframes show-logo {
   0% {
     opacity: 0;

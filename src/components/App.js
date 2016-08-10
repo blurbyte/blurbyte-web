@@ -8,6 +8,7 @@ import FullScreenGallery from './common/FullScreenGallery';
 import FullScreenLoader from './common/FullScreenLoader';
 import Footer from './common/Footer';
 import WelcomeScreen from './common/WelcomeScreen';
+import StickyHeader from './common/StickyHeader';
 
 //actions
 import * as scrollActions from '../actions/scrollActions';
@@ -61,6 +62,7 @@ class App extends React.Component {
     //loaders and page transition animations
     return (
       <div className="app-scroll-wrapper" ref={node => this.scrollWrapper = node}>
+        <StickyHeader />
         <CSSTransitionGroup transitionName="welcome-screen-fade" transitionEnter={false} transitionLeaveTimeout={8000}>
           {welcomeScreenVisibility && <WelcomeScreen />}
         </CSSTransitionGroup>

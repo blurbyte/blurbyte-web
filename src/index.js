@@ -41,6 +41,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 render(
   <Provider store={store}>
     <Router history={history} routes={routes} onUpdate={() => {
+      document.body.scrollTop = 0;
       document.querySelector('.app-scroll-wrapper').scrollTop = 0;
     }} />
   </Provider>,

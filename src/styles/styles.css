@@ -25,15 +25,13 @@ html {
 
 body {
   margin: 0;
-	background: #54534e;
+	background: #f0f0e9;
   overflow: hidden;
 }
 
 .app-scroll-wrapper {
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
   max-height: 100vh;
-  background: #f0f0e9;
 }
 
 .bgr-wrapper {
@@ -294,7 +292,6 @@ article, section {
   margin-top: 0.1rem;
 }
 
-
 /*FOLD IMAGE*/
 .fold-image {
   margin: 0 8.5rem;
@@ -333,7 +330,6 @@ article, section {
 .portfolio-project-category:last-child {
   margin-bottom: 0;
 }
-
 
 /*PORTFOLIO PROJECT*/
 .portfolio-project h3 {
@@ -870,18 +866,29 @@ ul, ol, dl {
 }
 
 /*FOOTER MIAN*/
-.main-footer {
-  background: #54534e;
-  z-index: 999;
-}
 
 .main-footer-wrapper {
+  overflow: hidden;
   height: 9rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100rem;
+}
+
+.main-footer {
+  background: #54534e;
+  transform: translateY(9rem);
+  transition: transform 0.75s;
+}
+
+.main-footer.expanded {
+  transform: translateY(0);
+}
+
+.main-footer-info {
+  height: 9rem;
   margin: 0 auto;
+  width: 100rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main-footer a {
@@ -900,16 +907,11 @@ ul, ol, dl {
   fill: #f5eee1;
 }
 
-.animated-footer {
-  overflow: hidden;
-  height: 9rem;
-}
-
 /*WELCOME SCREEN*/
 .welcome-screen {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   top: 0;
   left: 0;
   background: #54534e;
@@ -940,9 +942,9 @@ ul, ol, dl {
 
 /*LOADING SCREEN*/
 .full-screen-loader {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   top: 0;
   left: 0;
   background: #f0f0e9;
@@ -958,8 +960,15 @@ ul, ol, dl {
   animation-delay: 2s;
 }
 
-/*---MEDIAQUERIES---*/
 @media all and (max-width: 1080px) {
+  body {
+    overflow-y: scroll;
+  }
+
+  .app-scroll-wrapper {
+    overflow: initial;
+  }
+
   .bgr-wrapper {
     padding-top: 0;
     padding-bottom: 15rem;
@@ -1043,27 +1052,21 @@ ul, ol, dl {
   }
 
   .sticky-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    display: block;
-    width: 100%;
-    background: #f0f0e9;
-    margin: 0;
-    height: 12rem;
-    box-shadow: 0 6px 6px rgba(0,0,0,0.1);
-    border-bottom: 2px solid #908e89;
-    transition: height 0.4s ease;
-  }
-
-  .sticky-header .main-nav-wrapper {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background: #f0f0e9;
+    margin: 0;
     padding: 0 4rem;
+    height: 12rem;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #908e89;
+    transform: translateZ(0);
   }
 
   .sticky-header.contracted {
@@ -1144,9 +1147,22 @@ ul, ol, dl {
   }
 
   /*MAIN FOOTER*/
-  .main-footer-wrapper {
-    padding: 0 4rem;
+  .main-footer {
+    transform: translateY(0);
+  }
+
+  .main-footer-info {
     width: 100%;
+    padding: 0 4rem;
+  }
+
+  .articles-filter-item a, .new-article-info .new-label, .new-article-info time  {
+    padding-top: 0.9rem;
+  }
+
+  .main-content .small-clock {
+    padding-top: 0.2rem;
+    vertical-align: middle;
   }
 }
 
@@ -1216,17 +1232,13 @@ ul, ol, dl {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .hamburger-icon .main-shape {
-    transition: 0.75s fill;
-  }
-
-  .hamburger-icon:hover .main-shape {
-    fill: #54534e;
-  }
-
   /*MAIN NAV*/
+  .main-nav-logo a:hover .blurbyte-logo .main-shape, .main-nav-logo a:focus .blurbyte-logo .main-shape {
+    fill: #ff4326;
+  }
+
   .sticky-header .main-nav {
-    position: absolute;
+    position: fixed;
     display: block;
     top: 12rem;
     left: 0;
@@ -1282,7 +1294,7 @@ ul, ol, dl {
     text-decoration: none;
     background: #ff4326;
     border-radius: 8px;
-    padding: 0.4rem 1.2rem 0.3rem 1.2rem;
+    padding: 0.9rem 1.2rem 0.3rem 1.2rem;
     font-size: 2.4rem;
     color: #f5eee1;
     letter-spacing: -0.1rem;
@@ -1378,6 +1390,23 @@ ul, ol, dl {
 }
 
 @media all and (max-width: 540px) {
+  .sticky-header {
+    height: 9rem;
+    padding: 0 2rem;
+  }
+
+  .sticky-header .main-nav {
+    top: 9rem;
+  }
+
+  .fold-image {
+    margin: 0 2rem;
+  }
+
+  .main-content, .main-footer-info {
+    padding: 0 2rem;
+  }
+
   .about-graph-wrapper {
     transform: scale(0.6);
     margin-left: -8rem;
@@ -1385,5 +1414,100 @@ ul, ol, dl {
 
   .about-logotypes-wrapper {
     width: 30rem;
+  }
+
+  /*FULL SCREEN LOGO*/
+  .welcome-screen .blurbyte-logo {
+    width: 24rem;
+    height: 5rem;
+    top: calc(50% - 2.5rem);
+    left: calc(50% - 12rem);
+  }
+
+  .full-screen-loader .blurbyte-logo {
+    width: 24rem;
+    height: 5rem;
+  }
+
+  .welcome-screen-loading-bar {
+    animation: slide-loading-bar-short 6s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.75s;
+  }
+
+  .wide8 {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  .fold-image + .main-content {
+    margin-top: 6rem;
+  }
+
+  .main-content h2, .about-content .wide9 h2 {
+    margin-top: 2.4rem;
+  }
+
+  .about-content p:first-child {
+    padding-top: 1rem;
+  }
+
+  .bgr-wrapper {
+    background-position: center -54.8rem, center bottom;
+  }
+
+  .bgr-wrapper.no-header {
+    background-position: center -90.6rem, center bottom;
+  }
+
+  .no-header .wrapper {
+    padding-top: 9.6rem;
+  }
+
+  .fold-image + .new-article {
+    margin-top: 3.2rem;
+  }
+
+  .labels-count-6 .about-graph-wrapper {
+    height: 26rem;
+  }
+
+  .full-article h2, .main-content.new-article h2 {
+    margin-top: 0;
+  }
+
+  .articles-filter {
+    margin-bottom: 3rem;
+  }
+
+  .articles-filter h2 {
+    margin-top: 2.4rem;
+  }
+}
+
+@media all and (max-width: 340px) {
+  html {
+    font-size: 8px;
+  }
+
+  .bgr-wrapper {
+    background-position: center -82rem, center bottom;
+  }
+
+  .bgr-wrapper.no-header {
+    background-position: center -118rem, center bottom;
+  }
+
+  .sticky-header .blurbyte-logo {
+    width: 21.6rem;
+    height: 4.5rem;
+  }
+
+  .sticky-header .hamburger-icon {
+    width: 4.5rem;
+    height: 4.5rem;
   }
 }
