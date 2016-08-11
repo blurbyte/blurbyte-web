@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 
 //components
 import ArticlePageContent from './ArticlePageContent';
+import NotFoundPage from '../common/NotFoundPage';
 
 //actions
 import * as imageGalleryActions from '../../actions/imageGalleryActions';
@@ -52,11 +53,13 @@ class ArticlePage extends React.Component {
   populateGallery(articles, id) {
     //populating image gallery with images from current article content
     let article = find(articles, { id });
-    let images = getAllImagesForGallery(article, paths.ARTICLES_PATH);
-    //adding fold image to front of gallery
-    images.unshift({file: paths.ARTICLES_PATH + article.foldImage.file, alt: article.foldImage.alt});
+    if(!isEmpty(article)) {
+      let images = getAllImagesForGallery(article, paths.ARTICLES_PATH);
+      //adding fold image to front of gallery
+      images.unshift({file: paths.ARTICLES_PATH + article.foldImage.file, alt: article.foldImage.alt});
 
-    this.props.actions.populateImageGallery(images);
+      this.props.actions.populateImageGallery(images);
+    }
   }
 
   render() {
@@ -66,6 +69,12 @@ class ArticlePage extends React.Component {
     let article = {id: '', title: '', description: '', topic: '', foldImage: null, pubdate: '', readtime: 0, content: []};
     if(!isEmpty(articles)) {
       article = find(articles, {id: articleId });
+      //if user provided wrong article name display 404 page
+      if(isEmpty(article)) {
+        return (
+          <NotFoundPage />
+        );
+      }
     }
     return (
       <ArticlePageContent article={article} path={paths.ARTICLES_PATH} />

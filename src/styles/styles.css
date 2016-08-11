@@ -960,6 +960,59 @@ ul, ol, dl {
   animation-delay: 2s;
 }
 
+/*404 PAGE*/
+.page-not-found-content {
+  min-height: calc(100vh - 12rem);
+}
+.page-not-found-content p {
+  padding-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.page-not-found-content svg  {
+  width: 100%;
+}
+
+/*not found impression*/
+.not-found-impression .tall-rectangle {
+  transform: translateX(-138px);
+  animation: move-tall-rectangle 2s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+}
+
+.not-found-impression .corner-triangle {
+  transform: translateY(622px);
+  animation: move-corner-triangle 2s linear;
+  animation-fill-mode: forwards;
+  animation-delay: 8.8s;
+}
+
+.not-found-impression .number-first-four {
+  transform: translateX(-150px);
+  opacity: 0;
+  animation: move-number 2s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+}
+
+.not-found-impression .number-zero {
+  transform: translateX(-100px);
+  opacity: 0;
+  animation: move-number 2s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 8s;
+
+}
+
+.not-found-impression .number-second-four {
+  transform: translateX(-100px);
+  opacity: 0;
+  animation: move-number 2s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 9s;
+}
+
 @media all and (max-width: 1080px) {
   body {
     overflow-y: scroll;

@@ -8,6 +8,7 @@ import ProjectPage from './components/portfolio/ProjectPage';
 import BlogPage from './components/blog/BlogPage';
 import ArticlePage from './components/blog/ArticlePage';
 import Aboutpage from './components/about/Aboutpage';
+import NotFoundPage from './components/common/NotFoundPage';
 
 export default (
   <Route path="/" component={App}>
@@ -16,5 +17,6 @@ export default (
     <Route path="/articles/:articleId" component={ArticlePage} />
     <Route path="/about" component={Aboutpage} />
     <Route path="/portfolio/:projectId" component={ProjectPage} />
+    <Route path="*" component={NotFoundPage} />
   </Route>
 );

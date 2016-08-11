@@ -127,4 +127,42 @@ HamburgerIcon.propTypes = {
   expanded: PropTypes.bool
 };
 
-export {BlurbyteLogo, SlimArrow, BbcLogo, EaLogo, SegaLogo, TechnipLogo, SmallClock, CloseMark, GithubIcon, TwitterIcon, HamburgerIcon};
+const NotFoundImpression = () => (
+  <svg className="not-found-impression" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1660 1036">
+    <rect fill="#e6e6e6" width="1660" height="1036"/>
+    <rect className="tall-rectangle" fill="#f7f7f7" width="137.617" height="1036"/>
+    <g className="number-second-four">
+      <rect x="1062.633" y="300" fill="#bfbfbf" width="275.234" height="436"/>
+      <polygon fill="#333" points="1337.867,300 1337.867,575.234 1062.633,575.234"/>
+      <rect x="1200.25" y="575.234" fill="#666" width="137.617" height="160.766"/>
+      <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="1155.387" y1="709.729" x2="1245.974" y2="666.605">
+        <stop offset="0"/>
+        <stop offset="1" stopColor="#231f20" stopOpacity="0"/>
+      </linearGradient>
+      <rect x="1200.25" y="575.234" fill="url(#a)" width="137.617" height="160.766"/>
+    </g>
+    <g className="number-zero">
+      <path fill="#bfbfbf" d="M852.133 736c-120.398 0-218-97.602-218-218s97.602-218 218-218v436z"/>
+      <path fill="#666" d="M852.133 736c120.398 0 218-97.602 218-218h-218v218z"/>
+      <path fill="#333" d="M1070.133 518c0-120.398-97.602-218-218-218v218h218z"/>
+      <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="814.389" y1="656.715" x2="901.412" y2="615.288">
+        <stop offset="0"/>
+        <stop offset="1" stopColor="#231f20" stopOpacity="0"/>
+      </linearGradient>
+      <path fill="url(#b)" d="M1020.186 656.867L852.133 518v218c67.63 0 128.066-30.8 168.053-79.133z"/>
+    </g>
+    <g className="number-first-four">
+      <rect x="322.133" y="300.001" fill="#bfbfbf" width="327" height="518.001"/>
+      <polygon fill="#333" points="649.133,300.001 649.133,627 322.133,627"/>
+      <rect x="485.633" y="627" fill="#666" width="163.5" height="191.002"/>
+      <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="432.334" y1="786.79" x2="539.958" y2="735.556">
+        <stop offset="0"/>
+        <stop offset="1" stopColor="#231f20" stopOpacity="0"/>
+      </linearGradient>
+      <rect x="485.633" y="627" fill="url(#c)" width="163.5" height="191.002"/>
+    </g>
+    <polygon className="corner-triangle" fill="#404040" points="1660,413.907 1037.905,1036 1660,1036"/>
+  </svg>
+);
+
+export {BlurbyteLogo, SlimArrow, BbcLogo, EaLogo, SegaLogo, TechnipLogo, SmallClock, CloseMark, GithubIcon, TwitterIcon, HamburgerIcon, NotFoundImpression};

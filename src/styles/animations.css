@@ -281,3 +281,26 @@
     opacity: 1;
   }
 }
+
+/*NOT FOUND IMPRESSION*/
+@keyframes move-tall-rectangle {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-corner-triangle {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-number {
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

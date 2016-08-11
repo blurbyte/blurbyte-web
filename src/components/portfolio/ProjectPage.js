@@ -9,6 +9,7 @@ import isEmpty from 'lodash/isEmpty';
 
 //components
 import ProjectPageContent from './ProjectPageContent';
+import NotFoundPage from '../common/NotFoundPage';
 
 //actions
 import * as imageGalleryActions from '../../actions/imageGalleryActions';
@@ -49,7 +50,9 @@ class ProjectPage extends React.Component {
   populateGallery(projects, id) {
     //populating image gallery with images from project content
     let project = find(projects, { id });
-    this.props.actions.populateImageGallery(getAllImagesForGallery(project, paths.PROJECTS_PATH));
+    if(!isEmpty(project)) {
+      this.props.actions.populateImageGallery(getAllImagesForGallery(project, paths.PROJECTS_PATH));
+    }
   }
 
   render() {
@@ -59,8 +62,13 @@ class ProjectPage extends React.Component {
     let project = { id: '', title: '', description: '', category: '', content: [] };
     if (!isEmpty(projects)) {
       project = find(projects, { id: projectId });
+      //if user provided wrong project name display 404 page
+      if(isEmpty(project)) {
+        return (
+          <NotFoundPage />
+        );
+      }
     }
-
     return (
       <ProjectPageContent project={project} path={paths.PROJECTS_PATH} />
     );
