@@ -129,7 +129,7 @@ HamburgerIcon.propTypes = {
 
 const NotFoundImpression = () => (
   <svg className="not-found-impression" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1660 1036">
-    <rect fill="#e6e6e6" width="1660" height="1036"/>
+    <rect className="background" fill="#e6e6e6" width="1660" height="1036"/>
     <rect className="tall-rectangle" fill="#f7f7f7" width="137.617" height="1036"/>
     <g className="number-second-four">
       <rect x="1062.633" y="300" fill="#bfbfbf" width="275.234" height="436"/>
@@ -142,7 +142,7 @@ const NotFoundImpression = () => (
       <rect x="1200.25" y="575.234" fill="url(#a)" width="137.617" height="160.766"/>
     </g>
     <g className="number-zero">
-      <path fill="#bfbfbf" d="M852.133 736c-120.398 0-218-97.602-218-218s97.602-218 218-218v436z"/>
+      <path className="number-zero-first-half" fill="#bfbfbf" d="M852.133 736c-120.398 0-218-97.602-218-218s97.602-218 218-218v436z"/>
       <path fill="#666" d="M852.133 736c120.398 0 218-97.602 218-218h-218v218z"/>
       <path fill="#333" d="M1070.133 518c0-120.398-97.602-218-218-218v218h218z"/>
       <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="814.389" y1="656.715" x2="901.412" y2="615.288">

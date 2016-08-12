@@ -973,6 +973,23 @@ ul, ol, dl {
   width: 100%;
 }
 
+.page-not-found-content svg .background {
+  transition: fill 2s ease;
+}
+
+.page-not-found-content svg .number-zero-first-half {
+  transition: fill 2s ease;
+}
+
+.page-not-found-content svg:hover .background {
+  fill: #bfbfbf;
+}
+
+.page-not-found-content svg:hover .number-zero-first-half {
+  fill: #f7f7f7;
+}
+
+
 /*not found impression*/
 .not-found-impression .tall-rectangle {
   transform: translateX(-138px);
