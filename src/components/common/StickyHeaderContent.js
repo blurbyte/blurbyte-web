@@ -6,7 +6,7 @@ import {BlurbyteLogo, HamburgerIcon} from './Icons';
 
 const StickyHeaderContent = ({onHamburgerClick, onLinkClick, expanded}) => (
   <header className={`sticky-header${expanded ? ' expanded' : ''}`} role="banner">
-      <div className="main-nav-logo"><Link to="/"><BlurbyteLogo width={240} height={50} /></Link></div>
+      <div className="main-nav-logo"><Link onClick={onLinkClick} to="/"><BlurbyteLogo width={240} height={50} /></Link></div>
       <nav className="main-nav" >
         <ul>
           <li><IndexLink onClick={onLinkClick} to="/" activeClassName="active">Portfolio</IndexLink></li>

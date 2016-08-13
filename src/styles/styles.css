@@ -577,6 +577,7 @@ pre[class*="language-"] code {
 
 table {
   border-collapse: collapse;
+  margin: 2rem 0 1rem 0;
 }
 
 th, td {
@@ -588,10 +589,12 @@ th {
   background: rgba(55,55,55,0.1);
 }
 
-table {
-  border-bottom: 2px solid #908e89;
+thead {
   border-top: 2px solid #908e89;
-  margin: 2rem 0 1rem 0;
+}
+
+tbody {
+  border-bottom: 2px solid #908e89;
 }
 
 table ul {
@@ -1390,6 +1393,7 @@ ul, ol, dl {
   figcaption {
     font-size: 2rem;
   }
+
   /*PORTFOLIO*/
   .portfolio-project-content {
     display: block;
@@ -1556,6 +1560,27 @@ ul, ol, dl {
   .articles-filter h2 {
     margin-top: 2.4rem;
   }
+
+  /*ARTICLE TABLE*/
+  .horizontal-scroll-wrapper {
+    overflow-x: scroll;
+  }
+
+  .horizontal-scroll-wrapper table, .horizontal-scroll-wrapper pre {
+    display: block;
+  }
+
+  th {
+    min-width: 33vw;
+  }
+
+  /*CODE*/
+  pre[class*="language-"] {
+    padding: 0;
+    margin: 0;
+    display: block;
+    min-width: 200vw;
+  }
 }
 
 @media all and (max-width: 340px) {
@@ -1579,5 +1604,66 @@ ul, ol, dl {
   .sticky-header .hamburger-icon {
     width: 4.5rem;
     height: 4.5rem;
+  }
+
+  /*GRAPH LABELS*/
+  .labels-count-6 .about-graph-wrapper {
+    margin-bottom: 6rem;
+  }
+
+  .about-graph-wrapper {
+    margin-left: -9rem;
+  }
+
+  /*4 labels*/
+  .labels-count-4 .label-1 {
+    top: 2.5rem;
+    left: 1rem;
+  }
+
+  .labels-count-4 .label-2 {
+    top: 2.5rem;
+    left: 45.5rem;
+  }
+
+  .labels-count-4 .label-3 {
+    top: 25rem;
+    left: 45.5rem;
+  }
+
+  .labels-count-4 .label-4 {
+    top: 25rem;
+    left: 1rem;
+  }
+
+  /*6 labels*/
+  .labels-count-6 .label-1 {
+    top: 0;
+    left: 23rem;
+  }
+
+  .labels-count-6 .label-2 {
+    top: 9.5rem;
+    left: 46rem;
+  }
+
+  .labels-count-6 .label-3 {
+    top: 26.5rem;
+    left: 46rem;
+  }
+
+  .labels-count-6 .label-4 {
+    top: 36.5rem;
+    left: 23rem;
+  }
+
+  .labels-count-6 .label-5 {
+    top: 26.5rem;
+    left: 0;
+  }
+
+  .labels-count-6 .label-6 {
+    top: 9.5rem;
+    left: 0;
   }
 }
