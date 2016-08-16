@@ -6,7 +6,7 @@ import autoprefixer from 'autoprefixer';
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
-  __DEV__: true
+  __DEV__: false
 };
 
 export default {
@@ -50,6 +50,7 @@ export default {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.(jpe?g|png|gif)$/i, loader: 'file?name=assets/[name].[ext]' },
       { test: /\.[ot]tf$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream&name=assets/[name].[ext]' },
+      { test: /\.ico$/, loader: 'file?name=[name].[ext]' },
       { test: /(\.css)$/, loader: ExtractTextPlugin.extract('css?sourceMap!postcss') }
     ]
   },
