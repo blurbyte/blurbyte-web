@@ -1344,8 +1344,28 @@ ul, ol, dl {
   .sticky-header .main-nav li {
     border-bottom: 2px solid #908e89;
     margin: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
   }
 
+  .sticky-header.expanded .main-nav li {
+    opacity: 1;
+  }
+
+  /*delay between showing next menu items*/
+  .sticky-header .main-nav li:first-child {
+    transition-delay: 0.1s;
+  }
+
+  .sticky-header .main-nav li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .sticky-header .main-nav li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  /*no border under last menu item*/
   .sticky-header .main-nav li:last-child {
     border-bottom: none;
   }
