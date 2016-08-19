@@ -310,6 +310,7 @@ article, section {
   border-bottom: 2px solid #908e89;
   padding: 1rem 0;
   margin: 0;
+  line-height: 1.0;
 }
 
 .fold-image + .main-content {
@@ -1574,7 +1575,7 @@ ul, ol, dl {
   }
 
   .articles-filter {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 
   .articles-filter h2 {
