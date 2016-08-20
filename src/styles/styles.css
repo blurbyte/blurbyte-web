@@ -1546,6 +1546,11 @@ ul, ol, dl {
     padding: 3rem 0 2rem 0;
   }
 
+  .main-content.new-article h1, .main-content.full-article h1 {
+    line-height: 1;
+    padding: 1rem 0;
+  }
+
   .fold-image + .main-content {
     margin-top: 6rem;
   }
