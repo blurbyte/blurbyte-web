@@ -310,7 +310,6 @@ article, section {
   border-bottom: 2px solid #908e89;
   padding: 1rem 0;
   margin: 0;
-  line-height: 1.0;
 }
 
 .fold-image + .main-content {
@@ -1152,6 +1151,10 @@ ul, ol, dl {
     padding: 0;
   }
 
+  .sticky-header .main-nav-logo a {
+    display: block;
+  }
+
   .sticky-header .main-nav {
     margin-top: 0.8rem;
   }
@@ -1536,6 +1539,11 @@ ul, ol, dl {
 
   h1 {
     font-size: 6rem;
+  }
+
+  .main-content h1 {
+    line-height: 6rem;
+    padding: 3rem 0 2rem 0;
   }
 
   .fold-image + .main-content {
