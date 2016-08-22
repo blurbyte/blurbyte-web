@@ -28,6 +28,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.scrollWrapper.addEventListener('scroll', this.handleScroll);
+    //allows iOS to recognize CSS active links state
+    document.addEventListener('touchstart', () => {}, false);
   }
 
   componentWillReceiveProps(nextProps) {

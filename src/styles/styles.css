@@ -172,6 +172,14 @@ input, textarea, button, select, label, a {
   display: none;
 }
 
+.expand-menu-btn .main-shape {
+  transition: 0.75s fill;
+}
+
+.expand-menu-btn:active .main-shape {
+  fill: #54534e;
+}
+
 .masthead {
   width: 40.5rem;
   margin-left: 51rem;
@@ -1243,6 +1251,14 @@ ul, ol, dl {
     padding-top: 0.2rem;
     vertical-align: middle;
   }
+
+  .main-footer a:hover .icon .main-shape {
+    fill: #ff4326;
+  }
+
+  .main-footer a:active .icon .main-shape {
+  fill: #f5eee1;
+}
 }
 
 @media all and (max-width: 880px) {
@@ -1312,8 +1328,16 @@ ul, ol, dl {
   }
 
   /*MAIN NAV*/
+  .main-nav-logo a .blurbyte-logo .main-shape {
+    transition: 0.75s fill;
+  }
+
   .main-nav-logo a:hover .blurbyte-logo .main-shape, .main-nav-logo a:focus .blurbyte-logo .main-shape {
     fill: #ff4326;
+  }
+
+  .main-nav-logo a:active .blurbyte-logo .main-shape {
+    fill: #54534e;
   }
 
   .sticky-header .main-nav {
@@ -1397,10 +1421,14 @@ ul, ol, dl {
 
   .project-link:hover {
     color: #f5eee1;
+  }
+
+  .project-link:active {
+    color: #f5eee1;
     background: #54534e;
   }
 
-  .sticky-header .main-nav a.active {
+  .sticky-header .main-nav a:hover, .sticky-header .main-nav a.active {
     color: #f5eee1;
   }
 }
