@@ -40,7 +40,7 @@ export default {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.(jpe?g|png|gif)$/i, loader: 'file?name=assets/[name].[ext]' },
-      { test: /\.[ot]tf$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream&name=assets/[name].[ext]' },
+      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=10000&mimetype=application/font-woff&name=assets/[name].[ext]' },
       { test: /\.ico$/, loader: 'file?name=[name].[ext]' },
       { test: /(\.css)$/, loaders: ['style', 'css?sourceMap', 'postcss'] }
     ]

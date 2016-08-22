@@ -35,7 +35,10 @@ body {
 }
 
 .bgr-wrapper {
-  background: url("../images/top-bgr.jpg") top center no-repeat, url("../images/bot-bgr.jpg") bottom center no-repeat;
+  background-color: #f0f0e9;
+  background-image: url("../images/top-bgr.jpg"), url("../images/bot-bgr.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top, center bottom;
   padding-bottom: 24rem;
   padding-top: 6rem;
   min-height: 100vh;
@@ -94,6 +97,12 @@ article, section {
   width: 100rem;
   margin: 0 auto;
   position: relative;
+}
+
+/*removes tap color on mobile devices*/
+input, textarea, button, select, label, a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline: none;
 }
 
 /*GRID*/
@@ -308,8 +317,9 @@ article, section {
 .main-content h1 {
   border-top: 2px solid #908e89;
   border-bottom: 2px solid #908e89;
-  padding: 1rem 0;
+  padding: 2rem 0;
   margin: 0;
+  line-height: 1.0;
 }
 
 .fold-image + .main-content {
@@ -405,9 +415,6 @@ article, section {
 }
 
 .new-article h1 a {
-  text-decoration: none;
-  font-family: 'avant-garde-mid', sans-serif;
-  color: #54534e;
   transition: 0.5s color;
 }
 
@@ -501,9 +508,6 @@ article, section {
 }
 
 .blog-article h4 a {
-  text-decoration: none;
-  font-family: 'avant-garde-mid', sans-serif;
-  color: #54534e;
   transition: 0.5s color;
 }
 
@@ -896,6 +900,7 @@ ul, ol, dl {
 
 .main-footer a {
   margin-right: 1.4rem;
+  display: inline-block;
 }
 
 .main-footer .email {
@@ -1038,8 +1043,9 @@ ul, ol, dl {
     overflow-y: scroll;
   }
 
-  .app-scroll-wrapper {
+ .app-scroll-wrapper {
     overflow: initial;
+    min-height: 100vh;
   }
 
   .bgr-wrapper {
@@ -1233,10 +1239,6 @@ ul, ol, dl {
     padding: 0 4rem;
   }
 
-  .articles-filter-item a, .new-article-info .new-label, .new-article-info time  {
-    padding-top: 0.9rem;
-  }
-
   .main-content .small-clock {
     padding-top: 0.2rem;
     vertical-align: middle;
@@ -1375,12 +1377,7 @@ ul, ol, dl {
   }
 
   .sticky-header .main-nav a {
-    font-family: Georgia, 'Times New Roman', Times, serif;
     min-width: 100%;
-    font-weight: 400;
-    font-size: 4rem;
-    color: #f5eee1;
-    text-transform: none;
     display: block;
     padding: 2rem 0;
   }
@@ -1391,7 +1388,7 @@ ul, ol, dl {
     text-decoration: none;
     background: #ff4326;
     border-radius: 8px;
-    padding: 0.9rem 1.2rem 0.3rem 1.2rem;
+    padding: 0.4rem 1.2rem;
     font-size: 2.4rem;
     color: #f5eee1;
     letter-spacing: -0.1rem;
@@ -1403,6 +1400,9 @@ ul, ol, dl {
     background: #54534e;
   }
 
+  .sticky-header .main-nav a.active {
+    color: #f5eee1;
+  }
 }
 
 @media all and (max-width: 600px) {
@@ -1539,16 +1539,6 @@ ul, ol, dl {
 
   h1 {
     font-size: 6rem;
-  }
-
-  .main-content h1 {
-    line-height: 6rem;
-    padding: 3rem 0 2rem 0;
-  }
-
-  .main-content.new-article h1, .main-content.full-article h1 {
-    line-height: 1;
-    padding: 1rem 0;
   }
 
   .fold-image + .main-content {

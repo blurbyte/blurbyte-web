@@ -1,12 +1,15 @@
-@font-face {
-  font-family: 'avant-garde-mid';
-  src: url('../fonts/avant-garde-mid.otf');
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=26c85482-69dc-4f2b-ad21-a3522273e645");
+@font-face{
+  font-family:"ITC Avant Garde Gothic Book";
+  src:  url("../fonts/8bf59539-e73d-40bc-99bb-47491d253b56.woff2") format("woff2"),
+        url("../fonts/aaa23783-21a8-4607-adc1-28fd7a7f4455.woff") format("woff");
+}
+@font-face{
+  font-family:"ITC Avant Garde Gothic Medium";
+  src:  url("../fonts/e6f0d927-8819-4091-918e-e9bb6827b022.woff2") format("woff2"),
+        url("../fonts/1e67a9a6-e8cd-492b-9b6e-ee8f76d75736.woff") format("woff");
 }
 
-@font-face {
-  font-family: 'avant-garde-book';
-  src: url('../fonts/avant-garde-book.otf');
-}
 
 html {
 	font-size: 10px;
@@ -14,7 +17,7 @@ html {
 }
 
 h1 {
-  font-family: 'avant-garde-mid', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Medium', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-size: 8rem;
   color: #54534e;
   letter-spacing: -0.6rem;
@@ -22,7 +25,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   text-transform: uppercase;
   letter-spacing: -0.2rem;
   font-size: 2.4rem;
@@ -32,13 +35,13 @@ h2 {
 
 h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 3rem;
   color: #54534e;
 }
 
 h4 {
-  font-family: 'avant-garde-mid', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Medium', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   letter-spacing: -0.2rem;
   font-size: 3.2rem;
   color: #54534e;
@@ -47,18 +50,21 @@ h4 {
 
 p {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
   font-size: 2rem;
    color: #7b7872;
    line-height: 1.4;
 }
 
 a {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   letter-spacing: -0.2rem;
+  font-weight: normal;
 }
 
 table {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
   font-size: 2rem;
   line-height: 1.4;
   color: #7b7872;
@@ -67,6 +73,7 @@ table {
 
 li, dt, dd {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
   font-size: 2rem;
   line-height: 1.4;
   color: #7b7872;
@@ -78,6 +85,7 @@ dt {
 
 figcaption, aside, .project-content .small-text p {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
   font-size: 1.6rem;
   color: #7b7872;
   line-height: 1.4;
@@ -113,11 +121,12 @@ pre[class*="language-"], code[class*="language-"] {
 }
 
 .motto, .back-top p, time, .new-label {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2.4rem;
   text-transform: uppercase;
   letter-spacing: -0.2rem;
   color: #908e89;
+  font-weight: normal;
 }
 
 .new-label {
@@ -125,25 +134,28 @@ pre[class*="language-"], code[class*="language-"] {
 }
 
 .project-link {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2.4rem;
   text-transform: uppercase;
   letter-spacing: -0.2rem;
   color: #ff4326;
+  font-weight: normal;
 }
 
 .articles-filter-item {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2.4rem;
   letter-spacing: -0.2rem;
   color: #7b7872;
+  font-weight: normal;
 }
 
 .blog-article footer p {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2rem;
   letter-spacing: -0.1rem;
   color: #7b7872;
+  font-weight: normal;
 }
 
 .blog-article footer p time {
@@ -155,6 +167,7 @@ pre[class*="language-"], code[class*="language-"] {
 
 .full-article p a {
  font-family: Georgia, 'Times New Roman', Times, serif;
+ font-weight: 400;
  letter-spacing: 0;
  color: #7b7872;
 }
@@ -169,19 +182,21 @@ pre[class*="language-"], code[class*="language-"] {
 
 /*ABOUT GRAPHS*/
 .graph-label {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: -0.1rem;
   color: #7b7872;
+  font-weight: normal;
 }
 
 /*FULL SCREEN GALLERY*/
 .gallery-img-counter {
-  font-family: 'avant-garde-book', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2.4rem;
   letter-spacing: -0.2rem;
   color: #908e89;
+  font-weight: normal;
 }
 
 /*FOOTER MAIN*/
@@ -196,7 +211,34 @@ pre[class*="language-"], code[class*="language-"] {
 }
 
 .main-footer .email {
-  font-family: 'avant-garde-mid', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Medium', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2rem;
   color: #ff4326;
+  font-weight: normal;
+}
+
+/*NEW ARTICLE*/
+.new-article h1 a {
+  text-decoration: none;
+  font-family: 'ITC Avant Garde Gothic Medium', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  color: #54534e;
+  font-weight: normal;
+}
+
+.blog-article h4 a {
+  text-decoration: none;
+  font-family: 'ITC Avant Garde Gothic Medium', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  color: #54534e;
+  font-weight: normal;
+}
+
+@media all and (max-width: 700px) {
+  /*STICKY HEADER*/
+  .sticky-header .main-nav a {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 4rem;
+    color: #f5eee1;
+    text-transform: none;
+  }
 }
