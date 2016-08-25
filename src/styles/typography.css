@@ -150,6 +150,10 @@ pre[class*="language-"], code[class*="language-"] {
   font-weight: normal;
 }
 
+.blog-article h4 {
+  line-height: 1.1;
+}
+
 .blog-article footer p {
   font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 2rem;

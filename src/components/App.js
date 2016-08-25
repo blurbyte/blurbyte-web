@@ -20,28 +20,57 @@ class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      welcomeScreenVisibility: true
+      welcomeScreenVisibility: true,
+      touchmoveAttached: false
     };
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleTouchstart = this.handleTouchstart.bind(this);
+    this.handleTouchmove = this.handleTouchmove.bind(this);
   }
 
   componentDidMount() {
     this.scrollWrapper.addEventListener('scroll', this.handleScroll);
     //allows iOS to recognize CSS active links state
-    document.addEventListener('touchstart', () => {}, false);
+    document.addEventListener('touchstart', this.handleTouchstart);
+    //prevents scrolling on mobile when loading
+    document.addEventListener('touchmove', this.handleTouchmove);
   }
 
   componentWillReceiveProps(nextProps) {
-    //if initial content has loaded set WelcomeScreen flag to false
-    //this way WelcomeScreen shows only once
     if (!nextProps.loading) {
+      if(this.state.welcomeScreenVisibility) {
+        //allows scrolling after WelcomeScreen starts to disappear
+        setTimeout(() => {
+          document.removeEventListener('touchmove', this.handleTouchmove);
+        }, 7000);
+      }
+      //if initial content has loaded set WelcomeScreen flag to false
+      //this way WelcomeScreen shows only once
       this.setState({ welcomeScreenVisibility: false });
+    }
+
+    //covers preventing scrolling on mobile devices loading screens after initial load
+    if(!this.state.welcomeScreenVisibility) {
+      if(nextProps.loading) {
+        document.addEventListener('touchmove', this.handleTouchmove);
+        this.setState({ touchmoveAttached: true });
+      }
+      else {
+        if(this.state.touchmoveAttached) {
+          setTimeout(() => {
+            document.removeEventListener('touchmove', this.handleTouchmove);
+          }, 1800);
+          this.setState({ touchmoveAttached: false });
+        }
+      }
     }
   }
 
   componentWillUnmount() {
     this.scrollWrapper.removeEventListener('scroll', this.handleScroll);
+    document.removeEventListener('touchstart', this.handleTouchstart);
+    document.removeEventListener('touchmove', this.handleTouchmove);
   }
 
   handleScroll(event) {
@@ -49,6 +78,14 @@ class App extends React.Component {
     let scrollTop = event.target.scrollTop;
     let scrollHeight = getElementHeight(event.target);
     this.props.actions.updateScroll({ scrollTop, scrollHeight });
+  }
+
+  handleTouchstart() {
+    //fix for iOS CSS active links behavior
+  }
+
+  handleTouchmove(event) {
+    event.preventDefault();
   }
 
   showFullScreenLoader() {
@@ -65,16 +102,16 @@ class App extends React.Component {
     return (
       <div className="app-scroll-wrapper" ref={node => this.scrollWrapper = node}>
         <StickyHeader />
-        <CSSTransitionGroup transitionName="welcome-screen-fade" transitionEnter={false} transitionLeaveTimeout={8000}>
+        <CSSTransitionGroup component="div" transitionName="welcome-screen-fade" transitionEnter={false} transitionLeaveTimeout={8000}>
           {welcomeScreenVisibility && <WelcomeScreen />}
         </CSSTransitionGroup>
-        <CSSTransitionGroup transitionName="full-screen-loader-fade" transitionEnterTimeout={600} transitionLeaveTimeout={1400}>
+        <CSSTransitionGroup component="div" transitionName="full-screen-loader-fade" transitionEnterTimeout={600} transitionLeaveTimeout={1400}>
           {this.showFullScreenLoader() && <FullScreenLoader />}
         </CSSTransitionGroup>
-        <CSSTransitionGroup transitionName="full-screen-fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+        <CSSTransitionGroup component="div" transitionName="full-screen-fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
           {galleryVisibility && <FullScreenGallery />}
         </CSSTransitionGroup>
-        <CSSTransitionGroup transitionName="page-transition" transitionEnterTimeout={800} transitionLeave={false}>
+        <CSSTransitionGroup component="div" transitionName="page-transition" transitionEnterTimeout={800} transitionLeave={false}>
           {React.cloneElement(children, { key: location.pathname })}
         </CSSTransitionGroup>
         <Footer />

@@ -25,17 +25,18 @@ html {
 
 body {
   margin: 0;
-	background: #f0f0e9;
+  background: #54534e;
   overflow: hidden;
 }
 
 .app-scroll-wrapper {
   overflow-y: scroll;
   max-height: 100vh;
+  background: #f0f0e9;
 }
 
 .bgr-wrapper {
-  background-color: #f0f0e9;
+  /*background-color: #f0f0e9;*/
   background-image: url("../images/top-bgr.jpg"), url("../images/bot-bgr.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: center top, center bottom;
@@ -927,7 +928,7 @@ ul, ol, dl {
 .welcome-screen {
   position: fixed;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   background: #54534e;
@@ -960,7 +961,7 @@ ul, ol, dl {
 .full-screen-loader {
   position: fixed;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   background: #f0f0e9;
@@ -1053,7 +1054,7 @@ ul, ol, dl {
 
  .app-scroll-wrapper {
     overflow: initial;
-    min-height: 100vh;
+    max-height: initial;
   }
 
   .bgr-wrapper {
@@ -1257,8 +1258,8 @@ ul, ol, dl {
   }
 
   .main-footer a:active .icon .main-shape {
-  fill: #f5eee1;
-}
+    fill: #f5eee1;
+  }
 }
 
 @media all and (max-width: 880px) {
@@ -1535,7 +1536,7 @@ ul, ol, dl {
 
   .about-graph-wrapper {
     transform: scale(0.6);
-    margin-left: -8rem;
+    margin-left: -7.2rem;
   }
 
   .about-logotypes-wrapper {
