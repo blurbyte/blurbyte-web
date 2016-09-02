@@ -16,4 +16,5 @@ Experimental [Blurbyte web application](http://blurbyte.azurewebsites.net/) buil
   * __custom fonts__ from *fonts.com*
   * __media queries__
 
-Hosted on Azure cloud platform and connected to dedicated RESTful API.
+Hosted on Azure cloud platform, connected to dedicated RESTful API.
+[Mockups](https://github.com/blurbyte/blurbyte-web/tree/master/mockups) made in the pre-production stage helped immensely with React components structure planning.
