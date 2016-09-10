@@ -169,6 +169,30 @@ pre[class*="language-"], code[class*="language-"] {
   color: #7b7872;
 }
 
+.main-content.full-article .full-article-topic  {
+  font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 2.4rem;
+  color: #7b7872;
+}
+
+.full-article h3 {
+  font-size: 2rem;
+}
+
+
+.full-article-summary {
+  font-size: 2.4rem;
+}
+
+
+.main-content.full-article h2 {
+  font-family: 'ITC Avant Garde Gothic Medium', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  letter-spacing: -0.2rem;
+  font-size: 3.4rem;
+  color: #54534e;
+  font-weight: normal;
+}
+
 .full-article p a {
  font-family: Georgia, 'Times New Roman', Times, serif;
  font-weight: 400;

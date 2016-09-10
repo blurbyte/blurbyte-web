@@ -21,7 +21,7 @@ const ArticlePageContent = ({article, path}) => (
         <header>
           <div className="full-article-info"><Time date={article.pubdate} /></div>
           <h1><span>{article.title}</span></h1>
-          <h2>TOPIC {article.topic}  • <SmallClock width={22} height={22} />{article.readtime} {article.readtime > 1 ? 'minutes' : 'minute'} {'read'}</h2>
+          <h2 className="full-article-topic">TOPIC {article.topic}  • <SmallClock width={22} height={22} />{article.readtime} {article.readtime > 1 ? 'minutes' : 'minute'} {'read'}</h2>
         </header>
         {article.foldImage && <Image url={paths.ARTICLES_PATH + article.foldImage.file} alt={article.foldImage.alt} />}
         <PageContent content={article.content} path={path}/>

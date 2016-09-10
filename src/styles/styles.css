@@ -60,6 +60,10 @@ img {
   max-width: 100%;
 }
 
+strong {
+  font-weight: 700;
+}
+
 .clickable {
   cursor: pointer;
 }
@@ -543,6 +547,16 @@ input, textarea, button, select, label, a {
   align-items: center;
 }
 
+.full-article ul {
+  padding: 0;
+  list-style: none;
+  padding-left: 4rem;
+}
+
+.full-article ul li {
+  margin: 1.4rem 0;
+}
+
 .full-article h1 {
   font-size: 4rem;
   letter-spacing: -0.3rem;
@@ -565,12 +579,30 @@ input, textarea, button, select, label, a {
 .full-article-summary {
   padding: 0;
   margin: 0;
-  font-size: 2.4rem;
 }
 
-.full-article h4 {
-  margin-top: 3rem;
-  margin-bottom: 0;
+.full-article h3 {
+  margin: 4rem 0 2rem 0;
+}
+
+.full-article h4, .full-article h2 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  border: none;
+}
+
+/*delicate underline*/
+.main-content.full-article a {
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, #7b7872 50%, rgba(0,0,0,0) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 0.2rem;
+  background-position: 0 2rem;
+}
+
+.main-content .full-article-topic {
+  border-bottom: 2px solid #908e89;
+  margin: 0;
 }
 
 .full-article p {
