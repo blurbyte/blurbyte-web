@@ -191,6 +191,7 @@ pre[class*="language-"], code[class*="language-"] {
   font-size: 3.4rem;
   color: #54534e;
   font-weight: normal;
+  line-height: 1.0;
 }
 
 .full-article p a {

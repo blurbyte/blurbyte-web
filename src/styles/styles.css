@@ -1634,7 +1634,7 @@ ul, ol, dl {
     height: 26rem;
   }
 
-  .full-article h2, .main-content.new-article h2 {
+  .main-content.new-article h2 {
     margin-top: 0;
   }
 
