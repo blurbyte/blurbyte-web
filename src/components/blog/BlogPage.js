@@ -17,6 +17,7 @@ import reverse from 'lodash/reverse';
 import isEmpty from 'lodash/isEmpty';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
+import drop from 'lodash/drop';
 
 //cdn paths
 import * as paths from '../../utilities/cdnPaths';
@@ -64,9 +65,11 @@ class BlogPage extends React.Component {
   }
 
   fillArticlesTopicsList(articles) {
+    //drops newest article from list
+    const olderArticles = drop(articles);
     //filling articles topics list
     let articlesTopics = [{ topic: 'All', selected: true }];
-    articles.map(article => {
+    olderArticles.map(article => {
       articlesTopics.push({ topic: article.topic, selected: false});
     });
 
@@ -82,9 +85,7 @@ class BlogPage extends React.Component {
     let foldImage = null;
 
     if(!isEmpty(articles)) {
-      //ordering articles by date
-      articles = reverse(sortBy(this.props.articles, 'pubdate'));
-      foldImage = articles[0].foldImage;
+      foldImage = this.props.articles[0].foldImage;
     }
     else {
       //passing dummy article untill data are fetched from server
@@ -102,11 +103,11 @@ BlogPage.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state) => (
-  {
-    articles: state.articles
-  }
-);
+const mapStateToProps = (state) => {
+  //sorting articles from newest to oldest
+  const articles = reverse(sortBy(state.articles, 'pubdate'));
+  return { articles };
+};
 
 const mapDispatchToProps = (dispatch) => (
   { actions: bindActionCreators(Object.assign({}, articlesActions, articlesFilterActions, imageGalleryActions), dispatch) }
