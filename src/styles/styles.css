@@ -585,6 +585,10 @@ input, textarea, button, select, label, a {
   margin: 4rem 0 2rem 0;
 }
 
+.full-article .no-margin {
+  margin-top: 0;
+}
+
 .full-article h4, .full-article h2 {
   margin-top: 4rem;
   margin-bottom: 2rem;
@@ -1305,6 +1309,26 @@ ul, ol, dl {
     margin: 3rem 0 3rem 8.5rem;
     font-size: 2rem;
   }
+
+    /*ARTICLE TABLE*/
+  .horizontal-scroll-wrapper {
+    overflow-x: scroll;
+  }
+
+  .horizontal-scroll-wrapper table, .horizontal-scroll-wrapper pre {
+    display: block;
+  }
+
+  th {
+    min-width: 33vw;
+  }
+
+  /*CODE*/
+  pre[class*="language-"] {
+    padding-left: 0;
+    display: block;
+    min-width: 200vw;
+  }
 }
 
 @media all and (max-width: 770px) {
@@ -1644,27 +1668,6 @@ ul, ol, dl {
 
   .articles-filter h2 {
     margin-top: 2.4rem;
-  }
-
-  /*ARTICLE TABLE*/
-  .horizontal-scroll-wrapper {
-    overflow-x: scroll;
-  }
-
-  .horizontal-scroll-wrapper table, .horizontal-scroll-wrapper pre {
-    display: block;
-  }
-
-  th {
-    min-width: 33vw;
-  }
-
-  /*CODE*/
-  pre[class*="language-"] {
-    padding: 0;
-    margin: 0;
-    display: block;
-    min-width: 200vw;
   }
 }
 

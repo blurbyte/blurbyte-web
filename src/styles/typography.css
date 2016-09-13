@@ -209,6 +209,14 @@ pre[class*="language-"], code[class*="language-"] {
   color: #70a459;
 }
 
+.token.func {
+  color: #c45ea1;
+}
+
+.token.literal {
+  color: #aaa;
+}
+
 /*ABOUT GRAPHS*/
 .graph-label {
   font-family: 'ITC Avant Garde Gothic Book', Century Gothic, CenturyGothic, AppleGothic, sans-serif;
