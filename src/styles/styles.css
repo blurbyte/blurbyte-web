@@ -1285,8 +1285,7 @@ ul, ol, dl {
   }
 
   .main-content .small-clock {
-    padding-top: 0.2rem;
-    vertical-align: middle;
+    transform: scale(1.1);
   }
 
   .main-footer a:hover .icon .main-shape {
