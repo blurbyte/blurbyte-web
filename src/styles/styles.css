@@ -167,6 +167,12 @@ input, textarea, button, select, label, a {
   cursor: default;
 }
 
+.row-highlighted {
+  display: inline-block;
+  background: rgba(255,67,38,0.05);
+  width: 100%;
+}
+
 /*MAIN HEADER*/
 
 .sticky-header {
