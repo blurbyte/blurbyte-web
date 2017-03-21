@@ -33,7 +33,7 @@ h2 {
   font-weight: normal;
 }
 
-h3 {
+h3, h3 a {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
   font-size: 3rem;
@@ -175,8 +175,12 @@ pre[class*="language-"], code[class*="language-"] {
   color: #7b7872;
 }
 
-.full-article h3 {
+.full-article h3, .full-article h3 a {
   font-size: 2rem;
+}
+
+.full-article h3 a {
+  letter-spacing: 0;
 }
 
 
