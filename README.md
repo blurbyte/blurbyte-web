@@ -1,7 +1,9 @@
-#Blurbyte Web App
+# Blurbyte Web App
+
 Experimental [Blurbyte web application](http://blurbyte.azurewebsites.net/) built with React, React Router and Redux.
 
-###Technology stack:
+### Technology stack:
+
   * __react__ – reusable components for web applications
   * __redux__ – holds application state in single place, solves data flow between components
   * __redux-thunk__ – redux middleware for async action creators
